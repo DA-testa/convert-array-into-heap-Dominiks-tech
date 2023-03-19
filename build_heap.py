@@ -45,15 +45,15 @@ def main():
     # first two tests are from keyboard, third test is from a file
     print("F vai I")
     fi = input()
-    if fi == "F":
+    if fi == "F" or "F\r":
         fails =input()
-        with open(fails) as testfile:
+        with open(fails,'r') as testfile:
             n = int(testfile.readline().strip())
             n1 = testfile.readline().strip()
         data = list(map(int, n1.split()))
         # print(n)
         # print(data)
-    if fi == "I":
+    if fi == "I" or "I\r":
         # input from keyboard
         n = int(input())
         data = list(map(int, input().split()))
