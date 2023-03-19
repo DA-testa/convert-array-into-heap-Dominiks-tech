@@ -45,8 +45,8 @@ def main():
     # first two tests are from keyboard, third test is from a file
     print("F vai I")
     fi = input()
-    fi = fi.replace('\r\n', '\n')
-    if fi == "F":
+    
+    if fi == "F\r\n":
         fails =input()
         with open(fails,'r') as testfile:
             n = int(testfile.readline().strip())
@@ -54,7 +54,7 @@ def main():
         data = list(map(int, n1.split()))
         # print(n)
         # print(data)
-    if fi == "I":
+    if fi == "I\r\n":
         # input from keyboard
         n = int(input())
         data = list(map(int, input().split()))
