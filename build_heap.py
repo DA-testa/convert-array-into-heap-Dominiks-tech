@@ -29,7 +29,7 @@ def heap_sort(data, i, swaps):
         #samaina 
         data[i], data[parent] = data[parent], data[i]
         #ievieto apmainu "swap"
-        swaps.append(i, parent)
+        swaps.append((i, parent))
         #loopo lidz noteikts 
         heap_sort(data, parent, swaps)
 
@@ -46,7 +46,7 @@ def main():
     print("F vai I")
     fi = input()
     
-    if "F" in fi and "I" not in fi :
+    if "F" in fi :
         fails =input()
         with open(fails,'r') as testfile:
             n = int(testfile.readline().strip())
@@ -54,32 +54,57 @@ def main():
         data = list(map(int, n1.split()))
         # print(n)
         # print(data)
-    if "I" in fi and "F" not in fi:
+        # print(data)
+            # checks if lenght of data is the same as the said lenght
+        assert len(data) == n
+
+        # calls function to assess the data 
+        # and give back all swaps
+        swaps = build_heap(data)
+
+         # TODO: output how many swaps were made, 
+        # this number should be less than 4n (less than 4*len(data))
+
+
+        # output all swaps
+        print(len(swaps))
+        # print(swaps)
+        # print(data)
+        for i, j in swaps:
+            print(i, j)
+
+   
+    
+    elif "I" in fi :
         # input from keyboard
         n = int(input())
         data = list(map(int, input().split()))
         # print(data)
+            # checks if lenght of data is the same as the said lenght
+        assert len(data) == n
+
+        # calls function to assess the data 
+        # and give back all swaps
+        swaps = build_heap(data)
+
+         # TODO: output how many swaps were made, 
+        # this number should be less than 4n (less than 4*len(data))
+
+
+        # output all swaps
+        print(len(swaps))
+        # print(swaps)
+        # print(data)
+        for i, j in swaps:
+            print(i, j)
+    else:
+        print("error")
+        return
 
 
     
 
-    # checks if lenght of data is the same as the said lenght
-    assert len(data) == n
 
-    # calls function to assess the data 
-    # and give back all swaps
-    swaps = build_heap(data)
-
-    # TODO: output how many swaps were made, 
-    # this number should be less than 4n (less than 4*len(data))
-
-
-    # output all swaps
-    print(len(swaps))
-    # print(swaps)
-    # print(data)
-    for i, j in swaps:
-        print(i, j)
 
 
 if __name__ == "__main__":
