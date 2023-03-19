@@ -46,7 +46,7 @@ def main():
     print("F vai I")
     fi = input()
     
-    if fi == "F\r\n":
+    if "F" in fi and "I" not in fi :
         fails =input()
         with open(fails,'r') as testfile:
             n = int(testfile.readline().strip())
@@ -54,7 +54,7 @@ def main():
         data = list(map(int, n1.split()))
         # print(n)
         # print(data)
-    if fi == "I\r\n":
+    if "I" in fi and "F" not in fi:
         # input from keyboard
         n = int(input())
         data = list(map(int, input().split()))
